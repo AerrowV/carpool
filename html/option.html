@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>option</title>
+    <link rel="stylesheet" href="../design/optiondesign.css">
+    <script>
+        var selection = "";
+
+        function choice(p) {
+            console.log(p);
+            if (p == "Chauffør") {
+                document.getElementById("Chauffør").style.backgroundColor = "#00a81f";
+                document.getElementById("Chauffør").style.color = "#F5F5F5FF";
+                document.getElementById("Passager").style.backgroundColor = "#F5F5F5FF";
+                document.getElementById("Passager").style.color = "#3c3c3c";
+
+
+            } else {
+                document.getElementById("Passager").style.backgroundColor = "#00a81f";
+                document.getElementById("Passager").style.color = "#F5F5F5FF";
+                document.getElementById("Chauffør").style.backgroundColor = "#F5F5F5FF";
+                document.getElementById("Chauffør").style.color = "#3c3c3c";
+
+            }
+
+            document.getElementById("button").style.backgroundColor = "#00a81f";
+
+
+        }
+
+    </script>
+</head>
+<body>
+<form action="chooseride.html">
+<div class="container">
+    <div class="selection" required>
+        <button id="Chauffør" onclick="choice('Chauffør')" class="choice-button" type="button">Chauffør</button>
+        <span>ELLER</span>
+        <button id="Passager" onclick="choice('Passager')" class="choice-button" type="button">Passager</button>
+    </div>
+    <div class="dropdown-section" required>
+        <label for="city">Hvor du fra?</label><br>
+        <select id="city" name="city">
+            <option value="Rønne">Rønne</option>
+            <option value="Aakirkeby">Aakirkeby</option>
+            <option value="Nexø">Nexø</option>
+            <option value="Gudhjem">Gudhjem</option>
+        </select>
+    </div>
+
+    <div class="checkbox-section">
+        <button id="button" type="submit" class="confirm-button">✓</button>
+    </div>
+</div>
+</form>
+
+</body>
+</html>

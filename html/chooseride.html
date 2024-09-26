@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../design/chooseridedesign.css">
+    <script>
+        var selectedTil = null;
+        var selectedFra = null;
+
+        function selectTil(id) {
+            if (selectedTil) {
+                selectedTil.style.backgroundColor = "";
+                selectedTil.style.color = "";
+            }
+            selectedTil = document.getElementById(id);
+            selectedTil.style.backgroundColor = "#00a81f";
+            selectedTil.style.color = "#F5F5F5";
+            checkSelection()
+        }
+
+        function selectFra(id) {
+            if (selectedFra) {
+                selectedFra.style.backgroundColor = "";
+                selectedFra.style.color = "";
+            }
+            selectedFra = document.getElementById(id);
+            selectedFra.style.backgroundColor = "#00a81f";
+            selectedFra.style.color = "#F5F5F5";
+            checkSelection()
+        }
+
+        function checkSelection() {
+            if (selectedTil && selectedFra) {
+                document.getElementById("book").style.backgroundColor = "#00a81f";
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+<form action="confirmation.html">
+<div class="container">
+    <div class="search-section">
+        <button class="search-button">Søg</button>
+        <select class="city-select" required>
+            <option value="Rønne">Rønne</option>
+            <option value="Aakirkeby">Aakirkeby</option>
+            <option value="Nexø">Nexø</option>
+            <option value="Gudhjem">Gudhjem</option>
+        </select>
+        <span class="arrow">⇆</span>
+        <select class="city-select" required>
+            <option value="Rønne">Rønne</option>
+            <option value="Aakirkeby">Aakirkeby</option>
+            <option value="Nexø">Nexø</option>
+            <option value="Gudhjem">Gudhjem</option>
+        </select>
+        <input type="date" class="date-picker" required>
+        <input type="time" class="time-picker" required>
+    </div>
+
+    <table class="results-table" required>
+        <thead>
+        <tr>
+            <th>Til</th>
+            <th>Fra</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="Mikkel" onclick="selectTil('Mikkel')">
+                <span class="person-name">Mikkel</span>
+                <br>
+                Nexø - 08:00
+            </td>
+            <td id="Hans" onclick="selectFra('Hans')">
+                <span class="person-name">Hans</span>
+                <br>
+                Rønne - 16:00
+            </td>
+        </tr>
+        <tr>
+            <td id="Ditlev" onclick="selectTil('Ditlev')">
+                <span class="person-name">Ditlev</span>
+                <br>
+                Nexø - 08:00
+            </td>
+            <td id="Anja" onclick="selectFra('Anja')">
+                <span class="person-name">Anja</span>
+                <br>
+                Rønne - 14:00
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="Marie" onclick="selectFra('Marie')">
+                <span class="person-name">Marie</span>
+                <br>
+                Rønne - 13:30
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button id="book" class="book" type="submit">Book nu</button>
+
+</div>
+</form>
+</body>
+</html>
